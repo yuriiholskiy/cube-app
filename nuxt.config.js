@@ -1,6 +1,9 @@
+const base = '/cube-app/';
 export default {
 	mode: 'universal',
-
+	router: {
+		base
+	},
 	head: {
 		title: process.env.npm_package_name || '',
 		meta: [
@@ -9,7 +12,7 @@ export default {
 			{ hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
 		],
 		link: [
-			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+			{ rel: 'icon', type: 'image/x-icon', href: base + 'favicon.ico' },
 		],
 		bodyAttrs: {
 			class: 'hidden'
