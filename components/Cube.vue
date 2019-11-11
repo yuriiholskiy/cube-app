@@ -1,12 +1,12 @@
 <template>
 	<div class="cube" :style="cubeStyle">
-    <nuxt-link :to="{name: 'page1'}" class="side front">Page 1</nuxt-link>
-    <nuxt-link :to="{name: 'page2'}" class="side back">Page 2</nuxt-link>
-    <nuxt-link :to="{name: 'page3'}" class="side right">Page 3</nuxt-link>
-    <nuxt-link :to="{name: 'page4'}" class="side left">Page 4</nuxt-link>
-    <nuxt-link :to="{name: 'page5'}" class="side top">Page 5</nuxt-link>
-    <nuxt-link :to="{name: 'page6'}" class="side bottom">Page 6</nuxt-link>
-  </div>
+		<nuxt-link :to="{name: 'page1'}" class="side front">Page 1</nuxt-link>
+		<nuxt-link :to="{name: 'page2'}" class="side back">Page 2</nuxt-link>
+		<nuxt-link :to="{name: 'page3'}" class="side right">Page 3</nuxt-link>
+		<nuxt-link :to="{name: 'page4'}" class="side left">Page 4</nuxt-link>
+		<nuxt-link :to="{name: 'page5'}" class="side top">Page 5</nuxt-link>
+		<nuxt-link :to="{name: 'page6'}" class="side bottom">Page 6</nuxt-link>
+	</div>
 </template>
 
 <script>

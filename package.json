@@ -1,17 +1,20 @@
 {
-  "name": "awesome-cube-app",
-  "version": "1.0.0",
-  "description": "Cube and nuxt app.",
-  "author": "Yurii",
-  "private": true,
-  "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate"
-  },
-  "dependencies": {
-    "nuxt": "^2.0.0"
-  },
-  "devDependencies": {}
+	"name": "awesome-cube-app",
+	"version": "1.0.0",
+	"description": "Cube and nuxt app.",
+	"author": "Yurii",
+	"private": true,
+	"scripts": {
+		"dev": "nuxt",
+		"build": "nuxt build",
+		"deploy": "gh-pages -d dist",
+		"predeploy": "nuxt generate",
+		"start": "nuxt start"
+	},
+	"dependencies": {
+		"nuxt": "^2.0.0"
+	},
+	"devDependencies": {
+		"gh-pages": "^2.1.1"
+	}
 }

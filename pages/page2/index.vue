@@ -10,9 +10,9 @@
 <script>
 export default {
 	transition: {
-  	name: 'zoomOutDown',
-  	mode: 'out-in'
-  }
+		name: 'zoomOutDown',
+		mode: 'out-in'
+	}
 }
 </script>
 
