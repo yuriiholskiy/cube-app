@@ -7,13 +7,13 @@
 				Github
 			</a>
 			<p class="mt-1">
-				You can stop the cube rotation by enter space. 
-				To start rotate again also need enter space.
+				You can stop the cube rotation by clicking around cube. 
+				To start rotate again click one more time.
 			</p>
-			<p class="mt-1">
+			<p class="mt-1 hide-mobile">
 				On the other hand, You can rotate cube using arrow on keyboard.
 			</p>
-			<p class="mt-1">
+			<p class="mt-1 hide-mobile">
 				Created by Yurii Golskyi. &copy; {{ new Date().getFullYear() }}
 			</p>
 		</div>
@@ -44,5 +44,6 @@ export default {
 }
 .info {
 	margin-top: 10rem;
+	margin-bottom: 10rem;
 }
 </style>

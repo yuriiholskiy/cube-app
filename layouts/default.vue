@@ -1,6 +1,6 @@
 <template>
 	<div class="container">
-		<h1 class="title text-center">CubeNuxt there</h1>
+		<h1 class="title text-center mt-2">CubeNuxt there</h1>
 		<nuxt />
 	</div>
 </template>
@@ -23,7 +23,7 @@
 
 .container {
 	max-width: 1024px;
-	margin: 1rem auto;
+	margin: 0 auto;
 	padding: 0 2rem;
 }
 

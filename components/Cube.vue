@@ -26,11 +26,13 @@ export default {
 		}
 	},
 	mounted() {
-		document.addEventListener('keydown', this.keyDownHandler);
+		document.addEventListener('keydown', this.keyDownHandler);	
+		document.addEventListener('click', this.clickHandler);	
 		this.cubeRotation(2, 200);
 
 		this.$once('hook:destroyed', () => {
 			document.removeEventListener('keydown', this.keyDownHandler);
+			document.removeEventListener('click', this.clickHandler);
 			this.clearTimer();
 		});
 	},
@@ -52,10 +54,12 @@ export default {
 			} else if(event.keyCode === 40) {
 				this.rotateX -= this.rotationVal;
 			}
-			if(event.keyCode === 32) {
-				event.preventDefault();
-				if(this.rotationId !== null) {
-					this.clearTimer();
+		},
+		clickHandler(event) {
+			if(event.target.classList.contains('cube-wrap')) {
+				if(this.rotationId) {
+					window.clearInterval(this.rotationId);
+					this.rotationId = null;
 				} else {
 					this.cubeRotation(2, 200);
 				}
@@ -142,6 +146,14 @@ export default {
 @media screen and (max-width: 600px) {
 	.side {
 		font-size: 5rem;
+	}
+}
+@media screen and (max-width: 750px) and (orientation: landscape) {
+	.cube {
+		margin-top: 12rem;
+	}
+	.side {
+		font-size: 4rem;
 	}
 }
 </style>
