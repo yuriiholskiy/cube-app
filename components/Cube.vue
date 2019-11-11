@@ -10,7 +10,6 @@
 </template>
 
 <script>
-import { debounce } from '~/utils';
 export default {
 	props: {
 		size: {
