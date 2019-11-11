@@ -17,7 +17,7 @@
 	font-family: monospace;
 	color: #fbe0bb;
 }
-.title::selection {
+::selection {
 	background-color: #c88d39;
 }
 
@@ -27,4 +27,11 @@
 	padding: 0 2rem;
 }
 
+@media screen and (max-width: 450px) {
+	.title {
+		font-size: 2rem;
+		font-family: monospace;
+		color: #fbe0bb;
+	}
+}
 </style>

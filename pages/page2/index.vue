@@ -1,9 +1,21 @@
 <template>
-	<div>
+	<div class="page1">
 		<h2>
-			page 2
+			This is page 2 title.
 		</h2>
-		<nuxt-link :to="{name: 'index'}">home</nuxt-link>
+		<p class="mt-2">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat voluptatibus esse eligendi similique eos a dicta voluptatem cumque quas atque fuga obcaecati, beatae nulla, vel, aliquid vitae mollitia, enim tempore.
+		</p>
+		<p class="mt-2">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat voluptatibus esse eligendi similique eos a dicta voluptatem cumque quas atque fuga obcaecati, beatae nulla, vel, aliquid vitae mollitia, enim tempore.
+		</p>
+		<p class="mt-2">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat voluptatibus esse eligendi similique eos a dicta voluptatem cumque quas atque fuga obcaecati, beatae nulla, vel, aliquid vitae mollitia, enim tempore.
+		</p>
+		<p class="mt-2">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat voluptatibus esse eligendi similique eos a dicta voluptatem cumque quas atque fuga obcaecati, beatae nulla, vel, aliquid vitae mollitia, enim tempore.
+		</p>
+		<nuxt-link class="link mt-2" :to="{name: 'index'}">home</nuxt-link>
 	</div>
 </template>
 
@@ -15,5 +27,3 @@ export default {
 	}
 }
 </script>
-
-<style></style>

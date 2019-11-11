@@ -26,7 +26,23 @@ export default {
 		}
 	},
 	mounted() {
-		this.keyDownHandler = (event) => {
+		document.addEventListener('keydown', this.keyDownHandler);
+		this.cubeRotation(2, 200);
+
+		this.$once('hook:destroyed', () => {
+			document.removeEventListener('keydown', this.keyDownHandler);
+			this.clearTimer();
+		});
+	},
+	methods: {
+		cubeRotation(val = 2, timeout = 200) {
+			this.rotationId = window.setInterval(() => {
+				this.rotateX += val;
+				this.rotateY += val;
+			}, timeout);
+		},
+		keyDownHandler(event) {
+			
 			if(event.keyCode === 37) {
 				this.rotateY -= this.rotationVal;
 			} else if(event.keyCode === 38) {
@@ -36,23 +52,19 @@ export default {
 			} else if(event.keyCode === 40) {
 				this.rotateX -= this.rotationVal;
 			}
-		}
-		document.addEventListener('keydown', this.keyDownHandler);
-
-		this.cubeRotation(2, 200);
-
-		this.$once('hook:destroyed', () => {
-			document.removeEventListener('keydown', this.keyDownHandler);
+			if(event.keyCode === 32) {
+				event.preventDefault();
+				if(this.rotationId !== null) {
+					this.clearTimer();
+				} else {
+					this.cubeRotation(2, 200);
+				}
+			}
+		},
+		clearTimer() {
 			window.clearInterval(this.rotationId);
-		});
-	},
-	methods: {
-		cubeRotation(val = 2, timeout = 200) {
-			this.rotationId = window.setInterval(() => {
-				this.rotateX += val;
-				this.rotateY += val;
-			}, timeout);
-		}
+			this.rotationId = null;
+		} 
 	},
 	computed: {
 		cubeStyle() {
@@ -67,6 +79,7 @@ export default {
 <style>
 .cube {
 	position: relative;
+	margin-top: 8rem;
 	margin-left: auto;
 	margin-right: auto;
 	width: var(--cube-size);
@@ -89,6 +102,8 @@ export default {
 	text-align: center;
 	color: #fff;
 	backface-visibility: hidden;
+
+	transition: .25s transform;
 }
 .side:focus {
 	border: .5rem solid lightblue;
