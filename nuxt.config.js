@@ -31,15 +31,8 @@ export default {
 			mode: 'client'
 		}
 	],
-
-	buildModules: [
-	],
-
-	modules: [
-	],
-
+	
 	build: {
-		extend (config, ctx) {
-		}
+		publicPath: '/assets/',
 	}
 }
